@@ -22,5 +22,12 @@ jobs:
       - name: Grant execute permission to gradlew
         run: chmod +x gradlew
 
-      - name: Build with Gradle
-        run: ./gradlew assembleDebug  # 优先构建 Debug 版本，减少复杂度
+      - name: Build Debug APK with Gradle
+        run: ./gradlew assembleDebug  # 构建 Debug 版本 APK
+
+      - name: Upload Debug APK as Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: freeotp-debug-apk  # 产物名称（可自定义）
+          path: app/build/outputs/apk/debug/app-debug.apk  # APK 生成路径（根据项目结构调整）
+          retention-days: 7  # 产物保留时间（默认 90 天，可按需修改）
