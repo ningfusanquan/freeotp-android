@@ -29,5 +29,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: freeotp-debug-apk  # 产物名称（可自定义）
-          path: app/build/outputs/apk/debug/app-debug.apk  # APK 生成路径（根据项目结构调整）
+          path: mobile/build/outputs/apk/debug/mobile-debug.apk  # APK 生成路径（根据项目结构调整）
           retention-days: 7  # 产物保留时间（默认 90 天，可按需修改）
